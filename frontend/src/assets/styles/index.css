@@ -43,6 +43,12 @@ table th {
   margin-top: 10px;
 }
 
+.carousel-item img {
+  max-height: 700px;
+  object-fit: contain;
+  width: 100%;
+}
+
 .carousel-caption {
   position: absolute;
   width: 100%;
