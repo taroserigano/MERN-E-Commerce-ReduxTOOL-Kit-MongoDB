@@ -25,10 +25,15 @@ const App = () => {
 
   return (
     <>
-      <ToastContainer />
+      <div className='app-gradient' aria-hidden='true'>
+        <div className='app-gradient__blob app-gradient__blob--one'></div>
+        <div className='app-gradient__blob app-gradient__blob--two'></div>
+      </div>
+
+      <ToastContainer position='top-right' theme='colored' autoClose={3000} />
       <Header />
-      <main className='py-3'>
-        <Container>
+      <main className='py-4 app-shell'>
+        <Container className='content-wrapper'>
           <Outlet />
         </Container>
       </main>
