@@ -4,8 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate, Link } from 'react-router-dom';
 import { useLogoutMutation } from '../slices/usersApiSlice';
 import { logout } from '../slices/authSlice';
-import SearchBox from './SearchBox';
-import logo from '../assets/logo.png';
+import logo from '../assets/logo.svg';
 import { resetCart } from '../slices/cartSlice';
 
 const Header = () => {
@@ -39,18 +38,20 @@ const Header = () => {
         className='navbar-modern'
       >
         <Container>
-          <Navbar.Brand as={Link} to='/' className='brand-mark'>
-            <img src={logo} alt='ProShop' className='brand-mark__logo' />
-            ProShop
+          <Navbar.Brand
+            as={Link}
+            to='/'
+            className='brand-mark'
+            style={{ gap: '24px' }}
+          >
+            <img src={logo} alt='Tweeky Queeky' className='brand-mark__logo' />
+            Tweeky Queeky
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse
             id='basic-navbar-nav'
             className='justify-content-lg-end'
           >
-            <div className='search-box-container flex-grow-1 flex-lg-grow-0 me-lg-3 mb-3 mb-lg-0'>
-              <SearchBox />
-            </div>
             <Nav className='align-items-lg-center gap-2'>
               <Nav.Link as={Link} to='/cart' className='nav-pill'>
                 <FaShoppingCart /> Cart

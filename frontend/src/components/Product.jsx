@@ -1,16 +1,18 @@
 import { Card, Button } from 'react-bootstrap';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../slices/cartSlice';
+import { toast } from 'react-toastify';
 import Rating from './Rating';
 
 const Product = ({ product }) => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const addToCartHandler = () => {
     dispatch(addToCart({ ...product, qty: 1 }));
-    navigate('/cart');
+    toast.success(`${product.name} added!`, {
+      autoClose: 500,
+    });
   };
 
   return (

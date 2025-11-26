@@ -8,6 +8,8 @@ import Message from '../components/Message';
 import Paginate from '../components/Paginate';
 import ProductCarousel from '../components/ProductCarousel';
 import Meta from '../components/Meta';
+import SearchBox from '../components/SearchBox';
+import { Container } from 'react-bootstrap';
 
 const HomeScreen = () => {
   const { pageNumber, keyword } = useParams();
@@ -36,6 +38,9 @@ const HomeScreen = () => {
         <>
           <Meta />
           <h1>Latest Products</h1>
+          <Container className='my-4'>
+            <SearchBox />
+          </Container>
           <Row>
             {data.products.map((product) => (
               <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
