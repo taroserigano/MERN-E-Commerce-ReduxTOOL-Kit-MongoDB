@@ -15,7 +15,7 @@ A modern, full-stack e-commerce platform built with the MERN stack (MongoDB, Exp
 
 <img width="1912" height="924" alt="image" src="https://github.com/user-attachments/assets/28fe7516-49ea-43b2-9712-47787b2d0202" />
 
-#Pay by Paypal or credit card:
+# Pay by Paypal or credit card:
 <img width="1906" height="901" alt="image" src="https://github.com/user-attachments/assets/ea5a51e4-7db8-45a4-9a87-e78ceeb6ccaa" />
 
 
