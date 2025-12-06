@@ -2,7 +2,7 @@
 
 ## Live Demo: https://mern-e-commerce-tweeky-queeky.onrender.com
 
-A modern, full-stack e-commerce platform built with the MERN stack (MongoDB, Express, React, Node.js) featuring a sleek teal/cyan design theme, dark mode support, and comprehensive shopping cart functionality.
+A modern, full-stack e-commerce Dockerzied platform built with the MERN stack (MongoDB, Express, React, Node.js) featuring a sleek teal/cyan design theme, dark mode support, and comprehensive shopping cart functionality.
 
 
 
