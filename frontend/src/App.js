@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Container } from 'react-bootstrap';
 import { Outlet } from 'react-router-dom';
@@ -11,6 +11,20 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
   const dispatch = useDispatch();
+  const [theme, setTheme] = useState(() => {
+    const saved = localStorage.getItem('theme');
+    return saved === 'dark' ? 'dark' : 'light';
+  });
+
+  useEffect(() => {
+    const body = document.body;
+    if (theme === 'dark') {
+      body.classList.add('dark-theme');
+    } else {
+      body.classList.remove('dark-theme');
+    }
+    localStorage.setItem('theme', theme);
+  }, [theme]);
 
   useEffect(() => {
     const expirationTime = localStorage.getItem('expirationTime');
@@ -23,6 +37,10 @@ const App = () => {
     }
   }, [dispatch]);
 
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
+  };
+
   return (
     <>
       <div className='app-gradient' aria-hidden='true'>
@@ -31,7 +49,7 @@ const App = () => {
       </div>
 
       <ToastContainer position='top-right' theme='colored' autoClose={3000} />
-      <Header />
+      <Header theme={theme} onToggleTheme={toggleTheme} />
       <main className='py-4 app-shell'>
         <Container className='content-wrapper'>
           <Outlet />

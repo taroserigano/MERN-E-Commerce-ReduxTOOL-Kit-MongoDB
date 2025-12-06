@@ -1,5 +1,12 @@
-import { Navbar, Nav, Container, NavDropdown, Badge } from 'react-bootstrap';
-import { FaShoppingCart, FaUser } from 'react-icons/fa';
+import {
+  Navbar,
+  Nav,
+  Container,
+  NavDropdown,
+  Badge,
+  Button,
+} from 'react-bootstrap';
+import { FaShoppingCart, FaUser, FaMoon, FaSun } from 'react-icons/fa';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate, Link } from 'react-router-dom';
 import { useLogoutMutation } from '../slices/usersApiSlice';
@@ -7,7 +14,7 @@ import { logout } from '../slices/authSlice';
 import logo from '../assets/logo.svg';
 import { resetCart } from '../slices/cartSlice';
 
-const Header = () => {
+const Header = ({ theme = 'light', onToggleTheme }) => {
   const { cartItems } = useSelector((state) => state.cart);
   const { userInfo } = useSelector((state) => state.auth);
 
@@ -53,6 +60,15 @@ const Header = () => {
             className='justify-content-lg-end'
           >
             <Nav className='align-items-lg-center gap-2'>
+              <Button
+                variant='outline-light'
+                size='sm'
+                className='nav-pill theme-toggle-btn'
+                onClick={onToggleTheme}
+              >
+                {theme === 'dark' ? <FaSun /> : <FaMoon />}{' '}
+                {theme === 'dark' ? 'Light' : 'Dark'}
+              </Button>
               <Nav.Link as={Link} to='/cart' className='nav-pill'>
                 <FaShoppingCart /> Cart
                 {cartItems.length > 0 && (

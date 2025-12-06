@@ -1,0 +1,7 @@
+nohup: ignoring input
+
+> proshop2@2.0.0 start
+> node backend/server.js
+
+Server running in production mode on port 5001
+MongoDB Connected: cluster0-shard-00-02.fh3wq.mongodb.net
