@@ -1,6 +1,25 @@
 # Tweeky Queeky Shop
 
+## Live Demo: https://mern-e-commerce-tweeky-queeky.onrender.com
+
 A modern, full-stack e-commerce platform built with the MERN stack (MongoDB, Express, React, Node.js) featuring a sleek teal/cyan design theme, dark mode support, and comprehensive shopping cart functionality.
+
+
+
+<img width="1882" height="932" alt="image" src="https://github.com/user-attachments/assets/188067cf-dc23-4dc7-8303-86b372bf09d7" />
+<img width="1901" height="935" alt="image" src="https://github.com/user-attachments/assets/f2750031-638c-419e-a03b-7c2780543b5f" />
+
+
+<img width="1886" height="918" alt="image" src="https://github.com/user-attachments/assets/af8d1d6d-88a5-4187-80f3-71c9b747523d" />
+
+
+<img width="1912" height="924" alt="image" src="https://github.com/user-attachments/assets/28fe7516-49ea-43b2-9712-47787b2d0202" />
+
+#Pay by Paypal or credit card:
+<img width="1906" height="901" alt="image" src="https://github.com/user-attachments/assets/ea5a51e4-7db8-45a4-9a87-e78ceeb6ccaa" />
+
+
+<img width="1891" height="878" alt="image" src="https://github.com/user-attachments/assets/1acef509-c3a9-4907-a96f-65815560e5e1" />
 
 ## ✨ Features
 
@@ -257,10 +276,6 @@ After running `npm run data:import`:
 - `PUT /api/orders/:id/pay` - Update order to paid
 - `PUT /api/orders/:id/deliver` - Update order to delivered (Admin)
 
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
 ## 📄 License
 
 This project is licensed under the MIT License.
@@ -271,12 +286,6 @@ This project is licensed under the MIT License.
 - GitHub: [@taroserigano](https://github.com/taroserigano)
 - Repository: [MERN-E-Commerce-ReduxTOOL-Kit-MongoDB](https://github.com/taroserigano/MERN-E-Commerce-ReduxTOOL-Kit-MongoDB)
 
-## 🙏 Acknowledgments
-
-- Original course by Brad Traversy
-- PayPal for payment integration
-- MongoDB Atlas for database hosting
-- React Bootstrap for UI components
 
 ---
 
