@@ -112,37 +112,47 @@ const createProductReview = asyncHandler(async (req, res) => {
 
   const product = await Product.findById(req.params.id);
 
-  if (product) {
-    const alreadyReviewed = product.reviews.find(
-      (r) => r.user.toString() === req.user._id.toString()
-    );
-
-    if (alreadyReviewed) {
-      res.status(400);
-      throw new Error('Product already reviewed');
-    }
-
-    const review = {
-      name: req.user.name,
-      rating: Number(rating),
-      comment,
-      user: req.user._id,
-    };
-
-    product.reviews.push(review);
-
-    product.numReviews = product.reviews.length;
-
-    product.rating =
-      product.reviews.reduce((acc, item) => item.rating + acc, 0) /
-      product.reviews.length;
-
-    await product.save();
-    res.status(201).json({ message: 'Review added' });
-  } else {
+  if (!product) {
     res.status(404);
     throw new Error('Product not found');
   }
+
+  // Ensure we always have an array to work with
+  if (!Array.isArray(product.reviews)) {
+    product.reviews = [];
+  }
+
+  // Check if this user already reviewed; if so, update instead of replacing others
+  const existingReviewIndex = product.reviews.findIndex(
+    (r) => r.user.toString() === req.user._id.toString()
+  );
+
+  const newReview = {
+    name: req.user.name,
+    rating: Number(rating),
+    comment,
+    user: req.user._id,
+  };
+
+  if (existingReviewIndex >= 0) {
+    product.reviews[existingReviewIndex] = {
+      ...product.reviews[existingReviewIndex],
+      ...newReview,
+    };
+  } else {
+    product.reviews.push(newReview);
+  }
+
+  product.numReviews = product.reviews.length;
+
+  product.rating =
+    product.reviews.reduce((acc, item) => item.rating + acc, 0) /
+    product.reviews.length;
+
+  await product.save();
+  res.status(existingReviewIndex >= 0 ? 200 : 201).json({
+    message: existingReviewIndex >= 0 ? 'Review updated' : 'Review added',
+  });
 });
 
 // @desc    Get top rated products
