@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: tweeky-queeky-shop
+    env: docker
+    branch: main
+    repo: https://github.com/taroserigano/MERN-E-Commerce-ReduxTOOL-Kit-MongoDB
+    plan: free
+    region: oregon
+    buildCommand: ""
+    startCommand: ""
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: "5000"
+    healthCheckPath: /api/products
