@@ -1,6 +1,6 @@
 # Tweeky Queeky Shop
 
-Modern full-stack **MERN** e‑commerce platform with **Redux Toolkit**, **PayPal/credit-card checkout**, and **Dockerized** deployment. Features a teal/cyan gradient UI, dark mode, and a production-ready architecture.
+Modern full-stack **MERN** e‑commerce platform with **Redux Toolkit**, **PayPal/credit-card checkout**, and **Dockerized** deployment. **MongoDB** and features a teal/cyan gradient UI, dark mode, and a production-ready architecture.
 
 ## 🔗 Live Demo
 
