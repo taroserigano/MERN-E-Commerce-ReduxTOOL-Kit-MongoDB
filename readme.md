@@ -6,7 +6,6 @@ Modern full-stack **MERN** e‑commerce platform with **Redux Toolkit**, **PayPa
 
 **Live:** https://mern-e-commerce-tweeky-queeky.onrender.com  
 
-> Use the default admin credentials (below) after seeding to explore the full back-office experience.
 
 ---
 
